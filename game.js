@@ -1,6 +1,6 @@
 introduction();
 
-let wins, losses, ties; //sets up variables to track the player's wins, losses and ties
+let wins = 0, losses = 0, ties = 0; //sets up variables to track the player's wins, losses and ties
 
 startGame();
 
@@ -49,7 +49,7 @@ function getPlayerChoice(){
 function compareSelection(playerResponse, computerResponse){
     if (playerResponse === computerResponse){
         console.log("The computer also chose " + playerResponse + " ! No one gets a point this round.");
-
+        ties++;
     } else if (playerResponse === "ROCK" && computerResponse === "PAPER"){
         displayLoseResult(computerResponse);
 
@@ -69,6 +69,8 @@ function compareSelection(playerResponse, computerResponse){
         displayWinResult(computerResponse);
     }
 
+    console.log("Currently, you have " + wins + " wins, " + losses + " losses, and " + ties + " ties.")
+
     let playAgain = prompt("Would you like to play again? Enter yes or no.");
     playAgain = convertToUpperCase(playAgain);
 
@@ -82,9 +84,11 @@ function compareSelection(playerResponse, computerResponse){
 
 function displayWinResult(computerResult){
     console.log("The computer chose " + computerResult + ". Yay! You won this round!");
+    wins++; 
 }
 
 function displayLoseResult(computerResult){
     console.log("The computer chose " + computerResult + ". Oh no! You lost this round!");
+    losses++;
 
 }
