@@ -1,3 +1,14 @@
+/*
+
+Name: Rock, Paper, Scissors Game
+
+Purpose: This program will simulate a game of rock, paper, scissors. The player
+will be playing against the computer. Once the round is over, the program will display
+the player's wins, losses and ties and they will be asked if they want to play another round.
+The game ends when the player says no to this question.
+
+*/
+
 introduction();
 
 let wins = 0, losses = 0, ties = 0; //sets up variables to track the player's wins, losses and ties
