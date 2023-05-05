@@ -14,7 +14,11 @@ function startGame(){
     let computerSelection = getComputerChoice();
     let playerSelection = getPlayerChoice();
     compareSelection(playerSelection, computerSelection);
+}
 
+//function converts variables to fully uppercase letters
+function convertToUpperCase(response){
+    return response.toUpperCase();
 }
 
 //generates a random selection of rock, paper or scissors for the game
@@ -22,14 +26,8 @@ function getComputerChoice(){
     let gameOptions = ["rock", "paper", "scissors"];
     let randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)]
     randomChoice = convertToUpperCase(randomChoice);
-    console.log(randomChoice);
 
     return randomChoice;
-}
-
-//function converts variables to fully uppercase letters
-function convertToUpperCase(response){
-    return response.toUpperCase();
 }
 
 //prompts player for their choice of rock, paper or scissors
